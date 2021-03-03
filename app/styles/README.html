@@ -1,0 +1,169 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>README</title>
+<link rel="stylesheet" href="https://stackedit.io/res-min/themes/base.css" />
+<script type="text/javascript" src="https://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS_HTML"></script>
+</head>
+<body><div class="container"><h1 id="architecture-for-a-sass-project">Architecture for a Sass Project</h1>
+
+<p>One of the main benefits of using a CSS preprocessor is having the ability to split our code into several files without impacting performance. Thanks to Sass’s @import directive we can have as many files as we want in our development environment and this will compile to a single file in production.</p>
+
+<hr>
+
+
+
+<h2 id="heres-how-we-might-organize-our-files">Here’s how we might organize our files</h2>
+
+<p><strong><em>styles</em></strong>/ <br>
+|  <br>
+|– <strong><em>base/</em></strong>  <br>
+|&nbsp;&nbsp;&nbsp;|– <em>_reset.scss</em> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<em># Reset/normalize</em>  <br>
+|&nbsp;&nbsp;&nbsp;|– <em>_typography.scss</em> &nbsp;<em># Typography rules</em>  <br>
+|&nbsp;&nbsp;&nbsp;<em>…</em> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<em># Etc…</em>  <br>
+|  <br>
+|– <strong><em>components/</em></strong>  <br>
+|&nbsp;&nbsp;&nbsp;|– <em>_buttons.scss</em> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<em># Buttons</em>  <br>
+|&nbsp;&nbsp;&nbsp;|– <em>_carousel.scss</em> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<em># Carousel</em>  <br>
+|&nbsp;&nbsp;&nbsp;|– <em>_cover.scss</em> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<em># Cover</em>  <br>
+|&nbsp;&nbsp;&nbsp;|– <em>_dropdown.scss</em> &nbsp;&nbsp;&nbsp;&nbsp;<em># Dropdown</em>  <br>
+|&nbsp;&nbsp;&nbsp;|– <em>_navigation.scss</em> &nbsp;&nbsp;&nbsp;<em># Navigation</em>  <br>
+|&nbsp;&nbsp;&nbsp;<em>…</em> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<em># Etc…</em>  <br>
+|  <br>
+|– <strong><em>helpers/</em></strong>  <br>
+|&nbsp;&nbsp;&nbsp;|– <em>_variables.scss</em> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<em># Sass Variables</em>  <br>
+|&nbsp;&nbsp;&nbsp;|– <em>_functions.scss</em>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<em># Sass Functions</em>  <br>
+|&nbsp;&nbsp;&nbsp;|– <em>_mixins.scss</em>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<em># Sass Mixins</em>  <br>
+|&nbsp;&nbsp;&nbsp;|– <em>_helpers.scss</em>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<em># Class &amp; placeholders helpers</em>  <br>
+|&nbsp;&nbsp;&nbsp;…&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<em># Etc…</em>  <br>
+|  <br>
+|– <strong><em>layout/</em></strong>  <br>
+|&nbsp;&nbsp;&nbsp;|– <em>_grid.scss</em>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<em># Grid system</em>  <br>
+|&nbsp;&nbsp;&nbsp;|– <em>_header.scss</em>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<em># Header</em>  <br>
+|&nbsp;&nbsp;&nbsp;|– <em>_footer.scss</em>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<em># Footer</em>  <br>
+|&nbsp;&nbsp;&nbsp;|– <em>_sidebar.scss</em>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<em># Sidebar</em>  <br>
+|&nbsp;&nbsp;&nbsp;|– <em>_forms.scss</em>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<em># Forms</em>  <br>
+|&nbsp;&nbsp;&nbsp;<em>…</em>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<em># Etc…</em>  <br>
+|  <br>
+|– <strong><em>pages/</em></strong>  <br>
+|&nbsp;&nbsp;&nbsp;|– <em>_home.scss</em>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<em># Home specific styles</em>  <br>
+|&nbsp;&nbsp;&nbsp;|– <em>_contact.scss</em>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<em># Contact specific styles</em>  <br>
+|&nbsp;&nbsp;&nbsp;<em>…</em>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<em># Etc…</em>  <br>
+|  <br>
+|– <strong><em>themes/</em></strong>  <br>
+|&nbsp;&nbsp;&nbsp;|– <em>_theme.scss</em>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<em># Default theme</em>  <br>
+|&nbsp;&nbsp;&nbsp;|– <em>_admin.scss</em>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<em># Admin theme</em>  <br>
+|&nbsp;&nbsp;&nbsp;<em>…</em>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<em># Etc…</em>  <br>
+|  <br>
+|– <strong><em>vendors/</em></strong>  <br>
+|&nbsp;&nbsp;&nbsp;|– <em>_bootstrap.scss</em>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<em># Bootstrap</em>  <br>
+|&nbsp;&nbsp;&nbsp;|– <em>_jquery-ui.scss</em>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<em># jQuery UI</em>  <br>
+|&nbsp;&nbsp;&nbsp;<em>…</em>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<em># Etc…</em>  <br>
+|  <br>
+|  <br>
+– main.scss             # primary Sass file</p>
+
+<blockquote>
+  <p><strong>Note:</strong></p>
+  
+  <p>As you can see, there is only one Sass file at the root level: main.scss. All the other files are divided into appropriate folders and prefixed with an underscore (_) to tell Sass they are <a href="http://sass-lang.com/documentation/file.SASS_REFERENCE.html#partials">partial .scss files</a> that shouldn’t be compiled to .css files. Indeed, it is the base file’s role to import and merge all of those.</p>
+</blockquote>
+
+<hr>
+
+<h2 id="lets-now-look-at-each-of-the-folders-in-our-architecture">Let’s now look at each of the folders in our architecture</h2>
+
+
+
+<h4 id="base"><i class="icon-folder-open"></i> Base</h4>
+
+<p>The <strong><em>base/</em></strong> folder holds what we might call the boilerplate stuff for our project. In there, we might find the reset (or Normalize.css, or whatever), probably some stuff dealing with typography, and, depending on the project, maybe some other files.</p>
+
+<ul>
+<li><strong><em>_reset.scss</em></strong> or <strong><em>_normalize.scss</em></strong></li>
+<li><strong><em>_typography.scss</em></strong></li>
+</ul>
+
+
+
+<h4 id="components"><i class="icon-folder-open"></i> Components</h4>
+
+<p>For smaller components, there is the <strong><em>components/</em></strong> folder (frequently called <strong><em>modules/</em></strong>). While <strong><em>layout/</em></strong> is kind of macro (defining the global wireframe), <strong><em>components/</em></strong> is more micro. It can contain all kinds of specific modules like a slider, a loader, a widget, or anything along those lines. There are usually a lot of files in <strong><em>components/</em></strong> since your site should be mostly composed of tiny modules.</p>
+
+<ul>
+<li><strong><em>_media.scss</em></strong></li>
+<li><strong><em>_carousel.scss</em></strong></li>
+<li><strong><em>_thumbnails.scss</em></strong></li>
+</ul>
+
+
+
+<h4 id="helpers"><i class="icon-folder-open"></i> Helpers</h4>
+
+<p>The <strong><em>helpers/</em></strong> folder (sometimes called <strong><em>utils/</em></strong>) gathers all Sass tools and helpers we’ll use across the project. Got a function? A mixin? Put it in there. This folder also contains a <strong><em>_variables.scss</em></strong> file (sometimes <strong><em>_config.scss</em></strong>) which holds all global variables for the project (for typography, color schemes, and so on).</p>
+
+<ul>
+<li><strong><em>_variables.scss</em></strong></li>
+<li><strong><em>_mixins.scss</em></strong></li>
+<li><strong><em>_functions.scss</em></strong></li>
+<li><strong><em>_placeholders.scss</em></strong> (<em>frequently named</em> <strong><em>_helpers.scss</em></strong>)</li>
+</ul>
+
+
+
+<h4 id="layout"><i class="icon-folder-open"></i> Layout</h4>
+
+<p>The <strong><em>layout/</em></strong> directory (sometimes called <strong><em>partials/</em></strong>) usually contains a number of files, each of them setting some styles for the main sections of the layout (header, footer, and so on). It also contains the <strong><em>_grid</em></strong> file which is the grid system used to build the layout.</p>
+
+<ul>
+<li><strong><em>_grid.scss</em></strong></li>
+<li><strong><em>_header.scss</em></strong></li>
+<li><strong><em>_navigation.scss</em></strong></li>
+<li><strong><em>_footer.scss</em></strong></li>
+<li><strong><em>_sidebar.scss</em></strong></li>
+<li><strong><em>_forms.scss</em></strong></li>
+</ul>
+
+
+
+<h4 id="pages"><i class="icon-folder-open"></i> Pages</h4>
+
+<p>If we have page-specific styles, I think it’s cool to put them in a <strong><em>pages/</em></strong> folder and in a file named after the page. For example, it’s not uncommon to have very specific styles for the home page, so you’d have a <strong><em>_home.scss</em></strong> file in <strong><em>pages/</em></strong> dealing with this.</p>
+
+<ul>
+<li><strong><em>_home.scss</em></strong></li>
+<li><strong><em>_contact.scss</em></strong></li>
+</ul>
+
+
+
+<h4 id="themes"><i class="icon-folder-open"></i> Themes</h4>
+
+<p>If we are working on a large site with multiple themes, having a <strong><em>themes/</em></strong> folder can make sense. We can stuff all our theme/design related styles in there. This is definitely project-specific so be sure to include it only if you feel the need.</p>
+
+<ul>
+<li><strong><em>_theme.scss</em></strong></li>
+<li><strong><em>_admin.scss</em></strong></li>
+</ul>
+
+
+
+<h4 id="vendors"><i class="icon-folder-open"></i> Vendors</h4>
+
+<p>And last but not least, we will probably have a <strong><em>vendors/</em></strong> folder containing all the CSS files from external libraries and frameworks – Bootstrap, jQueryUI, FancyCarouselSliderjQueryPowered, and so on. Putting those aside in the same folder is a good way to tell “Hey, this is not from me, not my code, not my responsibility”.</p>
+
+<ul>
+<li><strong><em>_bootstrap.scss</em></strong></li>
+<li><strong><em>_jquery-ui.scss</em></strong></li>
+<li><strong><em>_select2.scss</em></strong></li>
+</ul>
+
+<hr>
+
+<blockquote>
+  <p><em>“With great power comes great responsibility.”</em> <br>
+  — Aquaman</p>
+</blockquote></div></body>
+</html>

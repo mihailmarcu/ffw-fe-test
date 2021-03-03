@@ -1,0 +1,19 @@
+//=============================================
+// The Clearfix
+//
+// Force an element to self-clear its children
+//=============================================
+
+// @example
+//
+// @extend %clearfix;
+
+
+%clearfix {
+  &:before,
+  &:after {
+    content: '';
+    display: table;
+    clear: both;
+  }
+}

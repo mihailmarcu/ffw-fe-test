@@ -1,0 +1,29 @@
+//=============================================
+// Grid
+//=============================================
+
+.container {
+  display: flex;
+  flex: 1 1 0%;
+  align-items: flex-start;
+
+  @media #{map-get($display-breakpoints, 'md-and-down')} {
+    flex-direction: column;
+  }
+
+  &--fluid {
+    width: 100%;
+  }
+}
+
+.column {
+  display: flex;
+  flex-grow: 1;
+  padding: 0 16px;
+
+  &--xl {
+    @media #{map-get($display-breakpoints, 'lg-and-up')} {
+      max-width: 409px;
+    }
+  }
+}

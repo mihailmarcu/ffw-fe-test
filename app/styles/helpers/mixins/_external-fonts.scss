@@ -1,0 +1,43 @@
+//=============================================
+// External fonts
+//
+// Simply include any font files in a directory
+// and add the “@include” tag in your styles,
+// which will grab all the files from your
+// chosen folder.
+//=============================================
+
+// @param {string} $name           ― The name of a font-family, like "times", "courier", "arial", etc.
+// @param {string} $path           ― Defines the URL(s) where the font should be downloaded from.
+// @param {string, number} $weight ― Defines the boldness of the font. Default value is "normal".
+// @param {string} $style          ― Defines how the font should be styled. Default value is "normal".
+// @param {string} $local_first    ― Specifying a font name to look for on the user's computer.
+// @param {string} $local_second   ― Specifying a font name to look for on the user's computer.
+
+// @example
+//
+// @include fontface('Montserrat', $font-path + $font-montserrat, 300, normal, 'Montserrat Thin', 'Montserrat-Thin');
+
+// @returns
+//
+// @font-face {
+//   font-family: "Montserrat";
+//   font-style: normal;
+//   font-weight: 300;
+//   src: local("Montserrat Thin"), local("Montserrat-Thin"), 
+//   url("../fonts/Montserrat/Montserrat-Thin.ttf") format("truetype");
+// }
+
+
+@mixin font-face($name, $path, $weight: null, $style: null, $local_first: null, $local_second: null, $exts: ttf) {
+	$src: null;
+	@each $ext in $exts {
+		$src: append($src, url(quote($path + "." + $ext)) format(quote(truetype)), comma);
+	}
+	@font-face {
+		font-family: quote($name);
+		font-style: $style;
+		font-weight: $weight;
+		src: local($local_first), local($local_second), $src;
+	}
+}

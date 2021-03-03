@@ -1,0 +1,323 @@
+//=============================================
+// Variables
+//=============================================
+
+$font-path: "fonts/";
+$font-montserrat: (
+  "name-space": "Montserrat",
+  "name-trim": "Montserrat",
+  "path": $font-path + "Montserrat/",
+);
+
+//=============================================
+// Montserrat
+//
+// Designed by Julieta Ulanovsky, Sol Matas,
+// Juan Pablo del Peral, Jacques Le Bailly
+//=============================================
+
+// Thin
+//
+// @example
+// font-family: 'Montserrat', sans-serif;
+// font-weight: 100;
+// font-style: normal;
+
+@include font-face(
+  map-get($font-montserrat, name-space),
+  map-get($font-montserrat, path) + map-get($font-montserrat, name-trim) +
+    "-Thin",
+  100,
+  normal,
+  map-get($font-montserrat, name-space) + " Thin",
+  map-get($font-montserrat, name-trim) + "-Thin"
+);
+
+// Thin Italic
+//
+// @example
+// font-family: 'Montserrat', sans-serif;
+// font-weight: 100;
+// font-style: italic;
+
+@include font-face(
+  map-get($font-montserrat, name-space),
+  map-get($font-montserrat, path) + map-get($font-montserrat, name-trim) +
+    "-ThinItalic",
+  100,
+  italic,
+  map-get($font-montserrat, name-space) + " ThinItalic",
+  map-get($font-montserrat, name-trim) + "-Thin"
+);
+
+// Extra-light
+//
+// @example
+// font-family: 'Montserrat', sans-serif;
+// font-weight: 200;
+// font-style: normal;
+
+@include font-face(
+  map-get($font-montserrat, name-space),
+  map-get($font-montserrat, path) + map-get($font-montserrat, name-trim) +
+    "-ExtraLight",
+  200,
+  normal,
+  map-get($font-montserrat, name-space) + " ExtraLight",
+  map-get($font-montserrat, name-trim) + "-ExtraLight"
+);
+
+// Extra-light Italic
+//
+// @example
+// font-family: 'Montserrat', sans-serif;
+// font-weight: 200;
+// font-style: italic;
+
+@include font-face(
+  map-get($font-montserrat, name-space),
+  map-get($font-montserrat, path) + map-get($font-montserrat, name-trim) +
+    "-ExtraLightItalic",
+  200,
+  italic,
+  map-get($font-montserrat, name-space) + " ExtraLightItalic",
+  map-get($font-montserrat, name-trim) + "-ExtraLightItalic"
+);
+
+// Light
+//
+// @example
+// font-family: 'Montserrat', sans-serif;
+// font-weight: 300;
+// font-style: normal;
+
+@include font-face(
+  map-get($font-montserrat, name-space),
+  map-get($font-montserrat, path) + map-get($font-montserrat, name-trim) +
+    "-Light",
+  300,
+  normal,
+  map-get($font-montserrat, name-space) + " Light",
+  map-get($font-montserrat, name-trim) + "-Light"
+);
+
+// Light Italic
+//
+// @example
+// font-family: 'Montserrat', sans-serif;
+// font-weight: 300;
+// font-style: italic;
+
+@include font-face(
+  map-get($font-montserrat, name-space),
+  map-get($font-montserrat, path) + map-get($font-montserrat, name-trim) +
+    "-LightItalic",
+  300,
+  italic,
+  map-get($font-montserrat, name-space) + " LightItalic",
+  map-get($font-montserrat, name-trim) + "-LightItalic"
+);
+
+// Regular
+//
+// @example
+// font-family: 'Montserrat', sans-serif;
+// font-weight: 400;
+// font-style: normal;
+
+@include font-face(
+  map-get($font-montserrat, name-space),
+  map-get($font-montserrat, path) + map-get($font-montserrat, name-trim) +
+    "-Regular",
+  400,
+  normal,
+  map-get($font-montserrat, name-space) + " Regular",
+  map-get($font-montserrat, name-trim) + "-Regular"
+);
+
+// Regular Italic
+//
+// @example
+// font-family: 'Montserrat', sans-serif;
+// font-weight: 400;
+// font-style: italic;
+
+@include font-face(
+  map-get($font-montserrat, name-space),
+  map-get($font-montserrat, path) + map-get($font-montserrat, name-trim) +
+    "-Italic",
+  400,
+  italic,
+  map-get($font-montserrat, name-space) + " Italic",
+  map-get($font-montserrat, name-trim) + "-Italic"
+);
+
+// Medium
+//
+// @example
+// font-family: 'Montserrat', sans-serif;
+// font-weight: 500;
+// font-style: normal;
+
+@include font-face(
+  map-get($font-montserrat, name-space),
+  map-get($font-montserrat, path) + map-get($font-montserrat, name-trim) +
+    "-Medium",
+  500,
+  normal,
+  map-get($font-montserrat, name-space) + " Medium",
+  map-get($font-montserrat, name-trim) + "-Medium"
+);
+
+// Medium Italic
+//
+// @example
+// font-family: 'Montserrat', sans-serif;
+// font-weight: 500;
+// font-style: italic;
+
+@include font-face(
+  map-get($font-montserrat, name-space),
+  map-get($font-montserrat, path) + map-get($font-montserrat, name-trim) +
+    "-MediumItalic",
+  500,
+  italic,
+  map-get($font-montserrat, name-space) + " MediumItalic",
+  map-get($font-montserrat, name-trim) + "-MediumItalic"
+);
+
+// Semi-bold
+//
+// @example
+// font-family: 'Montserrat', sans-serif;
+// font-weight: 600;
+// font-style: normal;
+
+@include font-face(
+  map-get($font-montserrat, name-space),
+  map-get($font-montserrat, path) + map-get($font-montserrat, name-trim) +
+    "-SemiBold",
+  600,
+  normal,
+  map-get($font-montserrat, name-space) + " SemiBold",
+  map-get($font-montserrat, name-trim) + "-SemiBold"
+);
+
+// Semi-bold Italic
+//
+// @example
+// font-family: 'Montserrat', sans-serif;
+// font-weight: 600;
+// font-style: italic;
+
+@include font-face(
+  map-get($font-montserrat, name-space),
+  map-get($font-montserrat, path) + map-get($font-montserrat, name-trim) +
+    "-SemiBoldItalic",
+  600,
+  italic,
+  map-get($font-montserrat, name-space) + " SemiBoldItalic",
+  map-get($font-montserrat, name-trim) + "-SemiBoldItalic"
+);
+
+// Bold
+//
+// @example
+// font-family: 'Montserrat', sans-serif;
+// font-weight: 700;
+// font-style: normal;
+
+@include font-face(
+  map-get($font-montserrat, name-space),
+  map-get($font-montserrat, path) + map-get($font-montserrat, name-trim) +
+    "-Bold",
+  700,
+  normal,
+  map-get($font-montserrat, name-space) + " Bold",
+  map-get($font-montserrat, name-trim) + "-Bold"
+);
+
+// Bold Italic
+//
+// @example
+// font-family: 'Montserrat', sans-serif;
+// font-weight: 700;
+// font-style: italic;
+
+@include font-face(
+  map-get($font-montserrat, name-space),
+  map-get($font-montserrat, path) + map-get($font-montserrat, name-trim) +
+    "-BoldItalic",
+  700,
+  italic,
+  map-get($font-montserrat, name-space) + " BoldItalic",
+  map-get($font-montserrat, name-trim) + "-BoldItalic"
+);
+
+// Extra-bold
+//
+// @example
+// font-family: 'Montserrat', sans-serif;
+// font-weight: 800;
+// font-style: normal;
+
+@include font-face(
+  map-get($font-montserrat, name-space),
+  map-get($font-montserrat, path) + map-get($font-montserrat, name-trim) +
+    "-ExtraBold",
+  800,
+  normal,
+  map-get($font-montserrat, name-space) + " ExtraBold",
+  map-get($font-montserrat, name-trim) + "-ExtraBold"
+);
+
+// Extra-bold Italic
+//
+// @example
+// font-family: 'Montserrat', sans-serif;
+// font-weight: 800;
+// font-style: italic;
+
+@include font-face(
+  map-get($font-montserrat, name-space),
+  map-get($font-montserrat, path) + map-get($font-montserrat, name-trim) +
+    "-ExtraBoldItalic",
+  800,
+  italic,
+  map-get($font-montserrat, name-space) + " ExtraBoldItalic",
+  map-get($font-montserrat, name-trim) + "-ExtraBoldItalic"
+);
+
+// Black
+//
+// @example
+// font-family: 'Montserrat', sans-serif;
+// font-weight: 900;
+// font-style: normal;
+
+@include font-face(
+  map-get($font-montserrat, name-space),
+  map-get($font-montserrat, path) + map-get($font-montserrat, name-trim) +
+    "-Black",
+  900,
+  normal,
+  map-get($font-montserrat, name-space) + " Black",
+  map-get($font-montserrat, name-trim) + "-Black"
+);
+
+// Black Italic
+//
+// @example
+// font-family: 'Montserrat', sans-serif;
+// font-weight: 900;
+// font-style: italic;
+
+@include font-face(
+  map-get($font-montserrat, name-space),
+  map-get($font-montserrat, path) + map-get($font-montserrat, name-trim) +
+    "-BlackItalic",
+  900,
+  italic,
+  map-get($font-montserrat, name-space) + " BlackItalic",
+  map-get($font-montserrat, name-trim) + "-BlackItalic"
+);

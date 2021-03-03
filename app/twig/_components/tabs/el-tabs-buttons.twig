@@ -1,0 +1,9 @@
+<div class="tabs__buttons">
+  <h1 class="tabs__title">Please select one font</h1>
+
+  <div class="tabs__buttons__items">
+  {% for tabButton in tabButtons %}
+    {% include "./el-tabs-button.twig" with tabButton %}
+  {% endfor %}
+  </div>
+</div>

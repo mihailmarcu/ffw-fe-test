@@ -1,0 +1,41 @@
+//=============================================
+// Reboot
+//
+// Sometimes we might want to insert global css
+// like resets or body property. 
+//=============================================
+
+
+// Body
+//
+// @returns body
+
+body {
+  overflow-x: hidden;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+
+  font-family: 'Montserrat', sans-serif;
+  font-weight: 400;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin: 0;
+  padding: 80px 0;
+}
+
+p {
+  margin: 0;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+.align-xy {
+  min-height: 300px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}

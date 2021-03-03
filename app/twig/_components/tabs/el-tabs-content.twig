@@ -1,0 +1,9 @@
+<div class="tabs__sections">
+  {% for tabButton in tabButtons %}
+    {% if tabButton.partial == "buy-font" %}
+      {% include "../../_partials/buy-font.twig" with tabButton.isActive %}
+    {% elseif tabButton.partial == "my-fonts" %}
+      {% include "../../_partials/my-fonts.twig" with tabButton.isActive %}
+    {% endif %}
+  {% endfor %}
+</div>

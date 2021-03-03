@@ -1,0 +1,118 @@
+//=============================================
+// Tabs
+//=============================================
+
+.tabs {
+  line-height: 1.5;
+  padding: 0 24px;
+  max-width: 1214px;
+  width: 100%;
+  @extend %clearfix;
+
+  &__buttons {
+    display: flex;
+    justify-content: flex-end;
+    margin: 0px 0px 26px 0px;
+
+    @media #{map-get($display-breakpoints, 'md-and-down')} {
+      flex-direction: column;
+    }
+
+    &__items {
+      display: flex;
+      flex: none;
+      align-items: center;
+
+      @media #{map-get($display-breakpoints, 'md-and-down')} {
+        justify-content: flex-end;
+      }
+    }
+  }
+
+  &__button {
+    display: block;
+    width: 100%;
+    text-decoration: none;
+    border: 0;
+    color: $vermilion;
+    background-color: transparent;
+    outline: none;
+    padding: 12px 20px;
+    cursor: pointer;
+    font-size: calculateRem(22);
+    font-weight: 700;
+    text-transform: uppercase;
+    transition: color 0.25s ease-in-out;
+
+    &:not(.tabs__button--active):hover {
+      color: lighten($vermilion, 15);
+    }
+
+    @media #{map-get($display-breakpoints, 'sm-and-up')} {
+      width: auto;
+      display: inline-block;
+    }
+
+    &--active {
+      color: $gray;
+      cursor: default;
+    }
+  }
+
+  &__sections {
+    width: 100%;
+    border: 4px solid $gray;
+    border-radius: 12px;
+    padding: 90px 66px;
+    min-height: 400px;
+  }
+
+  &__item {
+    list-style: none;
+
+    @media #{map-get($display-breakpoints, 'sm-and-up')} {
+      display: inline;
+    }
+
+    &--active {
+      .tabs__link {
+        color: $vermilion;
+      }
+
+      .tabs__content {
+        display: block;
+      }
+    }
+  }
+
+  &__content {
+    display: none;
+
+    &--active {
+      display: block;
+    }
+  }
+
+  &__text-block {
+    max-width: 400px;
+  }
+
+  &__title {
+    display: flex;
+    flex: auto;
+    align-self: stretch;
+    overflow: hidden;
+    white-space: nowrap;
+    font-size: 52px;
+    font-weight: 600;
+    padding: 0 0 0 25px;
+    margin: 0;
+
+    @media #{map-get($display-breakpoints, 'sm-and-down')} {
+      text-overflow: ellipsis;
+      overflow: hidden;
+      display: block;
+    }
+
+  }
+}

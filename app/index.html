@@ -1,0 +1,417 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
+    <meta name="description" content="Phrase - Coding Challenge" />
+    <meta name="author" content="Mihail Marcu" />
+    <title>Phrase - Coding Challenge</title>
+  </head>
+
+  <body>
+    <!-- Preloader Start -->
+    <div class="preloader">
+        <img src="images/preloader.svg" class="preloader__img" alt="Pre-loader">
+    </div>
+    <!-- Preloader End -->
+
+    <!-- Header Start -->
+    <header class="header--transparent">
+      <!-- Logo Nav Start -->
+      <nav class="navbar navbar-expand-lg navbar--masthead">
+        <div class="container">
+          <!-- Logo Start -->
+          <a class="navbar-brand" href="index.html">
+            <!-- SVG Logo Start -->
+            <img src="./images/logo.svg" class="navbar__logo" alt="PhraseApp">
+            <!-- SVG Logo End -->
+          </a>
+          <!-- Logo End -->
+
+          <!-- Menu Opener Button Start -->
+          <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarCollapse" aria-controls="navbarCollapse" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon">
+              <i class="material-icons navbar-toggler-icon__item">menu</i>
+            </span>
+          </button>
+          <!-- Menu Opener Button End -->
+          
+          <!-- Main Menu Start -->
+          <div class="collapse navbar-collapse" id="navbarCollapse">
+            <ul class="navbar-nav nav-pills mr-auto">
+              <!-- Menu Item Features -->
+              <li class="nav-item">
+                <a href="#" class="nav-link">Features</a>
+              </li>
+              <!-- Menu Item Customers -->
+              <li class="nav-item">
+                <a href="#" class="nav-link">Customers</a>
+              </li>
+              <!-- Menu Item Pricing -->
+              <li class="nav-item">
+                <a href="#" class="nav-link">Pricing</a>
+              </li>
+              <!-- Menu Item Resources -->
+              <li class="nav-item">
+                <a href="#" class="nav-link">Resources</a>
+              </li>
+            </ul>
+            <ul class="navbar-nav nav-pills my-2 my-md-0">
+              <li class="nav-item">
+                <a href="#" class="nav-link">
+                    <i class="material-icons align-top">language</i>
+                    English
+                </a>
+              </li>
+              <li class="nav-item">
+                  <a href="#" class="nav-link">Login</a>
+              </li>
+              <li class="nav-item">
+                  <button type="button" class="btn btn-secondary btn-sm">Sign Up</button>
+              </li>
+            </ul>
+          </div>
+          <!-- Main Menu End -->
+        </div>
+      </nav>
+      <!-- Logo Nav Start -->
+    </header>
+    <!-- Header End -->
+
+    <!-- Main Masthead Start -->
+    <section class="masthead masthead--landing bg-primary">
+      <div class="container">
+        <div class="row">
+          <div class="col-md-10 col-lg-6 offset-lg-3 offset-md-1">
+              <!-- Command Line Interface Start -->
+              <div class="cli">
+                <!-- CLI Content Start -->
+                <div class="cli__content tab-content" id="cliTabContent">
+                  <!-- CLI Content Download -->
+                  <pre class="cli__tab tab-pane fade show active" id="download" role="tabpanel" aria-labelledby="download-tab"><code>phraseapp locale download &lt;project_id&gt; &lt;id&gt; \
+                    &nbsp;&nbsp;--branch my-feature-branch \
+                    &nbsp;&nbsp;--file-format yml \
+                    &nbsp;&nbsp;--tags feature1,feature2 \
+                    &nbsp;&nbsp;--tag feature
+                  </code></pre>
+
+                  <!-- CLI Content Update -->
+                  <pre class="cli__tab tab-pane fade" id="update" role="tabpanel" aria-labelledby="update-tab"><code>phraseapp project update &lt;id&gt; \
+                    &nbsp;&nbsp;--name "My Android Project" \
+                    &nbsp;&nbsp;--main-format yml \
+                    &nbsp;&nbsp;--shares-translation-memory true \
+                    &nbsp;&nbsp;--project-image /path/to/my/project-screenshot.png \
+                    &nbsp;&nbsp;--account-id abcd1234
+                  </code></pre>
+
+                  <!-- CLI Content Delete -->
+                  <pre class="cli__tab tab-pane fade" id="delete" role="tabpanel" aria-labelledby="delete-tab"><code>phraseapp key delete &lt;project_id&gt; &lt;id&gt; \
+                    &nbsp;&nbsp;--branch my-feature-branch
+                  </code></pre>
+                </div>
+                <!-- CLI Content End -->
+
+                <!-- CLI Tabs Start -->
+                <ul class="cli__nav nav nav-tabs" id="cliTab" role="tablist">
+                  <!-- CLI Tab Download -->
+                  <li class="cli__nav-item nav-item">
+                    <a class="cli__nav-link nav-link active" id="download-tab" data-toggle="tab" href="#download" role="tab" aria-controls="download" aria-selected="true">Download a locale</a>
+                  </li>
+                  <!-- CLI Tab Update -->
+                  <li class="cli__nav-item nav-item">
+                    <a class="cli__nav-link nav-link" id="update-tab" data-toggle="tab" href="#update" role="tab" aria-controls="update" aria-selected="false">Update a project</a>
+                  </li>
+                  <!-- CLI Tab Delete -->
+                  <li class="cli__nav-item nav-item">
+                    <a class="cli__nav-link nav-link" id="delete-tab" data-toggle="tab" href="#delete" role="tab" aria-controls="delete" aria-selected="false">Delete a key</a>
+                  </li>
+                  <!-- CLI Tab More -->
+                  <li class="cli__nav-item nav-item">
+                    <a class="cli__nav-link nav-link" href="https://developers.phrase.com/api/" target=_blank"">More...</a>
+                  </li>
+                </ul>
+                  <!-- CLI Tabs End -->
+                </div>
+                <!-- Command Line Interface End -->
+          </div>
+        </div>
+        <div class="row">
+          <div class="col-sm-12 text-center">
+              <!-- Landing Heading -->
+              <h2 class="landing__heading">The whole PhraseApp API in your terminal.</h1>
+              <!-- Landing Context -->
+              <p class="landing__context">
+                The PhraseApp CLI tool lets you navigate your projects and translations quickly from the 
+                command line instead of fiddling around with long curl requests. Available for Linux, Mac OS X and Windows.
+              </p>
+              <!-- Landing Button -->
+              <button type="button" class="btn btn-secondary btn-lg">Free Download (MacOS X)</button>
+              <!-- Landing Subtitle -->
+              <div class="landing__subtitle">
+                Linux, Win download from GitHub
+              </div>
+          </div>
+        </div>
+      </div>
+    </section>
+    <!-- Main Masthead End -->
+
+    <!-- Feature Box Start -->
+    <section class="feature-box">
+      <div class="container">
+        <div class="row">
+          <div class="col-xs-1 col-sm-4">
+            <!-- Feature Start -->
+            <div class="feature">
+              <!-- Feature Icon -->
+              <i class="material-icons feature__icon">get_app</i>
+              <!-- Feature Content Start -->
+              <div class="feature__content">
+                <!-- Feature Title -->
+                <h3 class="feature__title">Download and Install</h3> 
+                <!-- Feature Description -->
+                <p class="feature__desc">Download and install the client from <a href="">Github.</a></p>
+                <!-- Feature Description -->
+                <p class="feature__desc">On MacOS you can also install via homebrew:</p>
+                <!-- Feature Code -->
+                <code class="code d-inline-block">brew tap phrase/brewed</code>
+                <!-- Feature Code -->
+                <code class="code d-inline-block">brew install phraseapp</code>
+                <!-- Feature Actions Start -->
+                <div class="feature__actions">
+                  <a href="#" class="feature__link">
+                      Learn more <i class="material-icons align-middle feature__link-icon">arrow_forward</i>
+                    </a>
+                </div>
+                <!-- Feature Actions End -->
+              </div>
+              <!-- Feature Content End -->
+            </div>
+            <!-- Feature End -->
+          </div>
+
+          <div class="col-sm-4">
+            <!-- Feature Start -->
+            <div class="feature">
+              <!-- Feature Icon -->
+              <i class="material-icons feature__icon">settings</i>
+              <!-- Feature Content Start -->
+              <div class="feature__content">
+                <!-- Feature Title -->
+                <h3 class="feature__title">Initialize</h3> 
+                <!-- Feature Description -->
+                <p class="feature__desc">Use the <code class="code d-inline">phraseapp ini.</code> command to initialize and configure your project.</p>
+                <!-- Feature Actions Start -->
+                <div class="feature__actions">
+                  <a href="#" class="feature__link">
+                      Learn more <i class="material-icons align-middle feature__link-icon">arrow_forward</i>
+                    </a>
+                </div>
+                <!-- Feature Actions End -->
+              </div>
+              <!-- Feature Content End -->
+            </div>
+            <!-- Feature End -->
+          </div>
+
+          <div class="col-sm-4">
+            <!-- Feature Start -->
+            <div class="feature">
+              <!-- Feature Icon -->
+              <i class="material-icons feature__icon">file_upload</i>
+              <!-- Feature Content Start -->
+              <div class="feature__content">
+                <!-- Feature Title -->
+                <h3 class="feature__title">Initialize</h3> 
+                <!-- Feature Description -->
+                <p class="feature__desc">Use the <code class="code d-inline">phraseapp push</code>  command to upload your existing locale files to PhraseApp.</p>
+                <!-- Feature Actions Start -->
+                <div class="feature__actions">
+                  <a href="#" class="feature__link">
+                      Learn more <i class="material-icons align-middle feature__link-icon">arrow_forward</i>
+                    </a>
+                </div>
+                <!-- Feature Actions End -->
+              </div>
+              <!-- Feature Content End -->
+            </div>
+            <!-- Feature End -->
+          </div>
+        </div>
+      </div>
+    </section>
+    <!-- Feature Box End -->
+
+    <!-- Footer Start -->
+    <footer class="footer">
+      <div class="footer-section">
+        <div class="container">
+          <div class="row">
+            <div class="col-sm-6 col-md-3">
+                <div class="dropdown dropdown-select">
+                  <button class="btn btn-outline-info dropdown-toggle dropdown-select__toggle btn-block" type="button" id="dropdownMenu2" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" data-offset="0,16">
+                    <i class="dropdown-select__icon dropdown-select__icon--front material-icons">language</i>
+                    <span class="dropdown-select__text">English</span>
+                    <i class="dropdown-select__icon dropdown-select__icon--caret float-right material-icons">keyboard_arrow_down</i>
+                  </button>
+                  <ul class="dropdown-menu dropdown-select__content" aria-labelledby="dropdownMenu2">
+                    <li>
+                        <a href="#" role="menuitem" tabindex="-1">English</a>
+                    </li>
+                    <li>
+                        <a href="#" role="menuitem" tabindex="-1">Deutsch</a>
+                    </li>
+                    <li>
+                        <a href="#" role="menuitem" tabindex="-1">Español</a>
+                    </li>
+                    <li>
+                        <a href="#" role="menuitem" tabindex="-1">Nederlands</a>
+                    </li>
+                    <li>
+                        <a href="#" role="menuitem" tabindex="-1">Norsk (bokmål)</a>
+                    </li>
+                    <li>
+                        <a href="#" role="menuitem" tabindex="-1">Français</a>
+                    </li>
+                    <li>
+                        <a href="#" role="menuitem" tabindex="-1">Italiano</a>
+                    </li>
+                    <li>
+                        <a href="#" role="menuitem" tabindex="-1">Dansk</a>
+                    </li>
+                    <li>
+                        <a href="#" role="menuitem" tabindex="-1">Português</a>
+                    </li>
+                    <li>
+                        <a href="#" role="menuitem" tabindex="-1">Polski</a>
+                    </li>
+                    <li>
+                        <a href="#" role="menuitem" tabindex="-1">日本語</a>
+                    </li>
+                    <li>
+                        <a href="#" role="menuitem" tabindex="-1">한국어</a>
+                    </li>
+                    <li>
+                        <a href="#" role="menuitem" tabindex="-1">中文</a>
+                    </li>
+                    <li>
+                        <a href="#" role="menuitem" tabindex="-1">русский</a>
+                    </li>
+                    <li>
+                        <a href="#" role="menuitem" tabindex="-1">Suomi</a>
+                    </li>
+                    <li>
+                        <a href="#" role="menuitem" tabindex="-1">Svenska</a>
+                    </li>
+                    <li>
+                        <a href="#" role="menuitem" tabindex="-1">Eesti keel</a>
+                    </li>
+                    <li>
+                        <a href="#" role="menuitem" tabindex="-1">Čeština</a>
+                    </li>
+                    <li>
+                        <a href="#" role="menuitem" tabindex="-1">Português (Brasil)</a>
+                    </li>
+                  </ul>
+                </div>
+            </div>
+            <div class="col-sm-6 col-md-3">
+              <!-- Footer Heading -->
+              <h5 class="footer__heading">PhraseApp</h5>
+
+              <!-- Footer List Start -->
+              <ul class="footer__list">
+                <li class="footer__list-item">
+                  <a href="#" class="footer__list-link">Home</a>
+                </li>
+                <li class="footer__list-item">
+                  <a href="#" class="footer__list-link">Features</a>
+                </li>
+                <li class="footer__list-item">
+                  <a href="#" class="footer__list-link">Pricing</a>
+                </li>
+                <li class="footer__list-item">
+                  <a href="#" class="footer__list-link">Demo</a>
+                </li>
+                <li class="footer__list-item">
+                  <a href="#" class="footer__list-link">API</a>
+                </li>
+                <li class="footer__list-item">
+                  <a href="#" class="footer__list-link">iOS App Localization</a>
+                </li>
+                <li class="footer__list-item">
+                  <a href="#" class="footer__list-link">Enterprise</a>
+                </li>
+              </ul>
+              <!-- Footer List end -->
+            </div>
+            <div class="col-sm-6 col-md-3">
+              <!-- Footer Heading -->
+              <h5 class="footer__heading">Company</h5>
+
+              <!-- Footer List Start -->
+              <ul class="footer__list">
+                <li class="footer__list-item">
+                  <a href="#" class="footer__list-link">About us</a>
+                </li>
+                <li class="footer__list-item">
+                  <a href="#" class="footer__list-link">Blog</a>
+                </li>
+                <li class="footer__list-item">
+                  <a href="#" class="footer__list-link">Jobs</a>
+                </li>
+                <li class="footer__list-item">
+                  <a href="#" class="footer__list-link">Press</a>
+                </li>
+              </ul>
+              <!-- Footer List end -->
+            </div>
+            <div class="col-sm-6 col-md-3">
+              <!-- Footer Heading -->
+              <h5 class="footer__heading">Support</h5>
+
+              <!-- Footer List Start -->
+              <ul class="footer__list">
+                <li class="footer__list-item">
+                  <a href="#" class="footer__list-link">Contact</a>
+                </li>
+                <li class="footer__list-item">
+                  <a href="#" class="footer__list-link">Documentation</a>
+                </li>
+                <li class="footer__list-item">
+                  <a href="#" class="footer__list-link">Service Status</a>
+                </li>
+              </ul>
+              <!-- Footer List end -->
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="footer-copyright">
+        <div class="container">
+          <div class="d-md-flex justify-content-end align-items-center text-center text-md-left">
+              <div class="footer-copyright__links">
+                  <ul class="list-inline m-0">
+                    <li class="list-inline-item"><a class="footer-copyright__links-item" href="#">Terms</a></li>
+                    <li class="list-inline-item"><a class="footer-copyright__links-item" href="#">Privacy</a></li>
+                    <li class="list-inline-item"><a class="footer-copyright__links-item" href="#">Imprint</a></li>
+                    <li class="list-inline-item">
+                      <a class="footer-copyright__links-item" href="#">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="155.14" height="155.14" viewBox="0 0 155.14 155.14" class="footer-copyright__social-icon"><path fill="currentColor" d="M89.58 155.14V84.38h23.75l3.56-27.59h-27.3V39.2c0-7.99 2.2-13.43 13.66-13.43h14.6V1.07A197.9 197.9 0 0 0 96.58 0C75.52 0 61.1 12.85 61.1 36.45V56.8H37.3v27.59H61.1v70.76h28.48z"></path></svg>
+                      </a>
+                    </li>
+                    <li class="list-inline-item">
+                      <a class="footer-copyright__links-item" href="#">
+                          <svg xmlns="http://www.w3.org/2000/svg" width="410.2" height="410.2" viewBox="0 0 410.2 410.2" class="footer-copyright__social-icon"><path fill="currentColor" d="M403.6 74.2c-9 4-18.5 7.2-28.2 9.5a88.2 88.2 0 0 0 23.2-37c1.3-4.1-3-7.6-6.7-5.4-13.5 8-28 14-43.3 17.8-.9.3-1.8.4-2.7.4-2.7 0-5.4-1-7.5-3a88.4 88.4 0 0 0-86.6-17.7 85.7 85.7 0 0 0-57.7 61.7 94.3 94.3 0 0 0-2.1 32.6 3.3 3.3 0 0 1-3.5 3.6A231.9 231.9 0 0 1 29 51.5c-2-2.5-6-2.2-7.6.6A88.4 88.4 0 0 0 36 159.6c-7-1.7-13.8-4.3-20.2-7.8-3-1.7-6.8.5-6.8 4a88.5 88.5 0 0 0 51.6 81.6 79.2 79.2 0 0 1-16.8-1.4 4.6 4.6 0 0 0-5.3 6 88.6 88.6 0 0 0 70 60.2 163.2 163.2 0 0 1-91.3 27.7H6.8c-3.1 0-5.8 2-6.6 5.1a7 7 0 0 0 3.4 7.8c37 21.5 79.1 32.9 122 32.9a246 246 0 0 0 104.1-22.1c29-13.5 54.7-32.7 76.3-57.2a250.5 250.5 0 0 0 62.6-163.8v-1.3c0-4.6 2-8.8 5.6-11.7 13.6-11 25.4-24 35.2-38.6 2.5-3.9-1.5-8.7-5.8-6.8z"></path></svg>
+                      </a>
+                    </li>
+                  </ul>
+                </div>
+          </div>
+        </div>
+      </div>
+    </footer>
+    <!-- Footer End -->
+  </body>
+</html>

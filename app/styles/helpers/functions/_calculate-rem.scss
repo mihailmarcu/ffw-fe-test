@@ -1,0 +1,21 @@
+/* ==========================================================================
+   Convert PX to REM
+   ========================================================================== */
+
+
+/**
+ * Convert font-size from px to rem with px fallback.
+ *
+ * @param {number} $size ― the value in pixel you want to convert.
+ *
+ * Example:
+ * font-size: calculateRem(12);
+ *
+ * Returns:
+ * font-size: 0.75rem;
+ */
+
+@function calculateRem($size) {
+	$remSize: $size / ($font-size-root / 1px);  
+  @return #{$remSize}rem;
+}
